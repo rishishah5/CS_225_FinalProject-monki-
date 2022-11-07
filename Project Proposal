@@ -1,0 +1,32 @@
+## Leading Question 
+
+The fundamental question we are trying to answer is 'Is global terrorism actually centralized to the Middle East' and 'Where does most terrorism occur?'. If we have more time, we hope to create a general search tool to see where majority of terrorism is occuring. We are using a database on [global terrorism](https://www.kaggle.com/datasets/START-UMD/gtd), which reveals terrorism activity across the globe. 
+
+## Dataset Acquisition
+
+We used [Kaggle](https://www.kaggle.com/), a dataset website, to acquire the data. We acquired data on [global terrorism](https://www.kaggle.com/datasets/START-UMD/gtd) that outlines well over 180,000 terrorist attacks from 1970-2017
+
+#### Data Format
+
+The dataset is split into eventID, year,month,day,date length, resolution, country, and region. The eventID is unique for each terrorist event. The dataset ranges in years from 1970 - 2017. It contains roughly 10000 rows of data. We currently plan on using all of it unless we find it is overwhelming our algorithm.
+
+#### Data Correction
+
+Our dataset contains info on each attack designated as terrorism since the 1970s. It showcases whether the event was resolved, what day/month/year it occured, and which country the attack happened in. For our purposes, we will ignore whether the attack was resolved or not and if it was an extended attack or not. Since we have a vast amount of events and we are primarily focusing on region, any attack where the region/location is unknown will be discarded. If the date is unknown but all other aspects are there, we may still use said data but only if the location info is there.
+
+#### Data Storage
+
+The source of the dataset is from a CSV file so we will read in the data and store in a graph linking attacks and years to analyze and use BFS on to find results. We are hoping that our BFS algorithm will have a Big O efficiency of O(V + E). Given we are checking for countries, Each vertice will at maximum be going for a couple thousand edges so we hope each time we run our algorithm to pick up data per country, it follows this general expectation.
+
+
+## Algorithm 
+Function Inputs: Year and Country to look at links between terrorism attacks from country to country in a similar time range.
+Function Outputs: The function will output any correlation between terroism attacks and country by seeing whether theres any link between countries during a certain time period from 1970-2017.
+Function Efficiency: Our target time/memory efficiency will be O(V + E) since this is such a large dataset we want to be able to optimally find correlation between countries, while also optimizing it for fast look up times.
+
+## Timeline
+From Nov 4 - Nov 11 we will finish brainstorming and writing out our ideas.
+We will have a concrete plan of action and delivrables to product week by week ending in our final product. We will go over the dataset in depth and decide the best course of action.
+From Nov 11 - Nov 18 we will start implementing our graph algorithms and produce a rough draft of our project
+From Nov 18 - Nov 25 we will have the project all together looking and bugs and optimizing
+From Nov 25 - Dec 7 we have a week of space to fix our program/give us room to work on our project. The final week will be bug fixes and making sure our program fufills all the requirements and is a solid product of our hard work.
